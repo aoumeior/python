@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-bicycles = ['trek', 'cannondale', 'redline', 'specialized'] 
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 
 '''
 
@@ -21,9 +21,9 @@ assert(bicycles[-1].title() == 'Specialized')
 modify
 
 '''
-bicycles = ['trek', 'cannondale', 'redline', 'specialized'] 
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 bicycles[0] = "python"
-assert(bicycles == ['python', 'cannondale', 'redline', 'specialized'] )
+assert(bicycles == ['python', 'cannondale', 'redline', 'specialized'])
 
 
 '''
@@ -32,7 +32,7 @@ append
 
 '''
 
-bicycles = ['trek', 'cannondale', 'redline', 'specialized'] 
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 bicycles.append("python")
 assert(bicycles == ['trek', 'cannondale', 'redline', 'specialized', 'python'])
 
@@ -42,9 +42,9 @@ assert(bicycles == ['trek', 'cannondale', 'redline', 'specialized', 'python'])
 insert
 
 '''
-bicycles = ['trek', 'cannondale', 'redline', 'specialized'] 
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 bicycles.insert(0, 'python')
-assert(bicycles == ['python', 'trek', 'cannondale', 'redline', 'specialized'] )
+assert(bicycles == ['python', 'trek', 'cannondale', 'redline', 'specialized'])
 
 '''
 
@@ -74,7 +74,7 @@ assert(var == 'specialized')
 
 # 2
 bicycles = ['trek', 'cannondale', 'redline', 'specialized']
-var = bicycles.pop(2);
+var = bicycles.pop(2)
 
 assert(bicycles == ['trek', 'cannondale', 'specialized'])
 assert(var == 'redline')
@@ -113,14 +113,14 @@ param iterable
 '''
 
 # 1
-cars = ['bmw', 'audi', 'toyota', 'subaru'] 
+cars = ['bmw', 'audi', 'toyota', 'subaru']
 cars.sort()
 
 '顺序也是断言相同的一个评判标准 而不是仅仅容器中值相同'
 assert(cars == ['audi', 'bmw', 'subaru', 'toyota'])
 
 # 2
-cars = ['bmw', 'audi', 'toyota', 'subaru'] 
+cars = ['bmw', 'audi', 'toyota', 'subaru']
 assert(sorted(cars) == ['audi', 'bmw', 'subaru', 'toyota'])
 
 '''
@@ -145,3 +145,61 @@ Return the number of items of a sequence or collection.
 
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 assert(len(cars) == 4)
+
+
+'''
+
+
+
+'''
+
+
+squares = [value ** 2 for value in range(1, 3)]
+assert(squares == [1, 4])
+
+
+'''
+
+切片
+
+1. 切片的使用
+2. 切片的遍历
+3. !!!! 切片的应用
+    a.复制列表
+'''
+
+# 1
+
+# [0 1)
+assert([1, 2, 2, 3, ][0:1] == [1])
+
+# 默认开始索引为 0
+assert([1, 2, 2, 3, ][:2] == [1, 2])
+
+# 默认结束索引为 list 大小-1
+assert([1, 2, 2, 3, ][:] == [1, 2, 2, 3])
+
+# 2
+
+total = []
+for value in [1, 2, 3][:]:
+    total.append(value)
+assert(total == [1, 2, 3])
+
+# !!!! 3
+
+list_r = [1, 2, 3, 4, 5]
+
+list_c = list_r[:]
+
+list_r.remove(1)
+
+assert(list_r != list_c)
+
+# 过下面的断言就知道为什么使用切片来进行复制了
+
+list_r_a = [1, 2, 3, 4]
+list_c_a = list_r_a
+
+list_c_a.remove(1)
+assert(list_r_a == list_c_a)
