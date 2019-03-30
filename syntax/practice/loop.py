@@ -42,10 +42,32 @@ rt = range(0, 1)
 
 '''
 
-min
-max
+while loop
+
+1. base
+2. break
+3. continue 
 
 '''
 
-assert(max([1, 2, 3, 4]) == 4)
-assert(min([1, 2, 3, 4]) == 1)
+# 1.
+list_t = [1, 2, 3, 4]
+while list_t:
+    list_t.pop()
+
+# 2.
+
+list_t = [1, 2, 3, 4]
+while list_t:
+    msg = list_t.pop()
+    if msg == 4:
+        break
+    print(msg)
+
+# 3.
+list_t = [1, 2, 3, 4]
+while list_t:
+    msg = list_t.pop()
+    if msg == 4:
+        continue
+    print(msg)
