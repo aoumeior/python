@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+'''
+
+define
+
+'''
+
 bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 
 '''
