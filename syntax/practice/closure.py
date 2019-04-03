@@ -5,7 +5,6 @@
 you must use at python3
 
 1. nonlocal only support python3
-2. 
 '''
 
 
@@ -14,6 +13,9 @@ you must use at python3
 closure
 
 '''
+
+number = [8, 3, 2, 5, 4, 7, 4]
+group = {2, 3, 5, 7}
 
 
 # 1
@@ -29,9 +31,6 @@ def SortPriority(value, group):
     value.sort(key=Closure)
     return res
 
-
-number = [8, 3, 2, 5, 4, 7, 4]
-group = {2, 3, 5, 7}
 
 res = SortPriority(number, group)
 
@@ -84,7 +83,7 @@ def SortPriority_2(value, group):
     res = [False]
 
     def Closure(x):
-        # in python2, you can do the same as in python3
+        # in python2, you can do the same as python3，but no grace
         if x in group:
             # assign
             res[0] = True
