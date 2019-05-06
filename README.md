@@ -31,3 +31,4 @@
 backups/doc
 
 1. [super](./syntax/backups/doc/super.md)
+2. [magic method](./syntax/backups/magic__method.py)
